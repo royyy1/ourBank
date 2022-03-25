@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Deposists</title>
+    </head>
+    <style>
+        #bodycontent label { 
+            padding-left:5px;
+            display:block 
+        }
+        #bodycontent fieldset { 
+            padding-left: 100px 
+       
+       
+        }
+        #bodycontent input span{
+            margin: 0 0 2px;
+        }
+        h2{
+            color: red;
+            text-align: center;
+        }
+
+        h3{
+            color: red;
+            text-align: center;
+        }
+        .instructions{
+            margin: 0;
+            padding: 0;
+            border: 1px black;
+
+        }
+
+    </style>
+    <script>
+        function calDep(){
+                var P = document.f1.am.value;
+                let R=abc();
+                let N=cde();
+                var emi = P * R * (1+R)^N / [(1+R)^N-1] ;
+                document.getElementById("emi").innerText = emi;
+            }
+
+        function cde(){
+            let duration=document.getElementById("duration").value
+            return duration
+        }
+         function abc(){
+            let duration=cde();
+            let roi;
+            if(duration>0 && duration<=2){
+                roi = 5;
+             }else if(duration>2 && duration<=5){
+                 roi = 6;
+             }else if(duration>5 && duration<=10){
+                 roi= 7;
+             }else{
+                 roi = "Not applicable";
+             }
+             if(roi=="Not applicable"){
+                 alert("Kindly give proper duration for the deposists");
+                 document.getElementById("myForm").reset();
+             }else{
+                document.getElementById("roi").value=roi
+                return roi
+             }
+            
+        }
+    </script>
+    <link rel="stylesheet" href="menu.css">
+    <body>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li> <a href="about.html">About Us</a></li>
+            <li> <a href="service.html">Services</a></li>
+            <li> <a href="netbanking.html">NetBanking</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        <div class="instructions" id="1">
+            <h3>Please provide below details to get Deposits Details</h3>
+        <h2>Kindly make sure you select the proper duration, more than 10 years duration is not allowed.</h2>
+        </div>
+        
+
+        <div id="bodycontent">
+            <form name="f1" id="myForm">
+                <fieldset>
+                    <legend>Deposit Form</legend>
+                <label for="amount">Principal</label>
+                <input type="number" id="amount" name="am" class="table-form" required><br>
+                <br>
+                <label for="roi">Duration</label>
+                <input type="text" id="duration" name="dur"class="table-form" min="0" required><br>
+                <br>
+                <label for="roi">Rate of Interest</label>
+                <input type="text" id="roi" name="roi" class="table-form" disabled ><br>
+                <br>
+                <input type="button" value="Calculate" onClick="calDep()">
+                <br>
+                <br>
+                <label for="emi">Maturity Amount:</label>
+                <span id="emi" disabled></span>
+                <br>
+            </fieldset>  
+            </form>
+        </div>
+        <footer>
+            <a href="contact.html">Contact</a></p>
+            <p>© Our Bank Private Ltd.</p>
+            <p>Terms and Conditions</p>
+          </footer>
+        
+    </body>
+</html>

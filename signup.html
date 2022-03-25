@@ -1,0 +1,49 @@
+<html>
+<head> 
+<title> 
+Welcome to Our Bank
+</title>
+<link rel="stylesheet" href="menu.css">
+<style>
+  h4{
+    font-style: italic;
+  color: red;
+  }
+
+  p.validation{
+    font-style: oblique;
+    color: blue;
+  }
+</style>
+</head>
+<body>
+<h1> REGISTRATION </h1>
+<ul>
+  <li><a class="active" href="index.html">Home</a></li>
+  <li> <a href="about.html">About Us</a></li>
+  <li> <a href="service.html">Services</a></li>
+  <li> <a href="netbanking.html">NetBanking</a></li>
+  <li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+<h4> Kindly provide unique password to make sure it is not vulnerable to hackers. </h4>
+<p class="validation"> Please ensure the password should be in range of 8 to 16 characters</p>
+<hr>
+  <form action="netbanking.html"> 
+  <h3> 
+    Full Name: <input type="text" name="fn" required> <br> <br>
+    Password: <input type="password" name="pwd" required min="8" max="16"> <br> <br>
+    Repeat Password: <input type="password" name="pwd" required min="8" max="16"> <br> <br>
+    Mobile No: <input type="number" name="mob" required> <br>
+  <br>
+  <input type="submit" name="b1" value="Register">
+  <input type="reset" name="b2" value="Reset">
+  </h3>
+  </form>
+  <footer>
+    <a href="contact.html">Contact</a></p>
+    <p>© Our Bank Private Ltd.</p>
+    <p>Terms and Conditions</p>
+  </footer>
+</body>
+</html>
